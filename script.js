@@ -21,7 +21,6 @@ sub.addEventListener("click", function () {
     }
     if (minutes === 60) {
       hours += 1;
-
       minutes = 0;
     }
     seconds < 10
@@ -33,7 +32,9 @@ sub.addEventListener("click", function () {
     hours < 10
       ? (hourswatch.textContent = "0" + hours)
       : (hourswatch.textContent = hours);
-    miliseconds.textContent = milisec;
+    milisec < 10
+      ? (miliseconds.textContent = "0" + milisec)
+      : (miliseconds.textContent = milisec);
   }
 
   myInterval = setInterval(con, 10);
