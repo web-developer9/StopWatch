@@ -17,11 +17,11 @@ sub.addEventListener("click", function () {
       milisec = 0;
     }
     if (seconds === 60) {
-      minutes += 1 + " m ";
+      minutes += 1;
       seconds = 0;
     }
     if (minutes === 60) {
-      hours += 1 + " h ";
+      hours += 1;
       minutes = 0;
     }
     seconds < 10
