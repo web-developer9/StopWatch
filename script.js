@@ -8,6 +8,7 @@ let seconds = 0;
 let minutes = 0;
 let hours = 0;
 let milisec = 0;
+let stopwatch = true;
 sub.addEventListener("click", function () {
   function con() {
     milisec += 1;
@@ -16,11 +17,11 @@ sub.addEventListener("click", function () {
       milisec = 0;
     }
     if (seconds === 60) {
-      minutes = minutes + 1;
+      minutes += 1 + " m ";
       seconds = 0;
     }
     if (minutes === 60) {
-      hours += 1;
+      hours += 1 + " h ";
       minutes = 0;
     }
     seconds < 10
@@ -36,12 +37,14 @@ sub.addEventListener("click", function () {
       ? (miliseconds.textContent = "0" + milisec)
       : (miliseconds.textContent = milisec);
   }
-
+  sub.disabled = true;
   myInterval = setInterval(con, 10);
 });
 
 sto.addEventListener("click", function () {
   clearInterval(myInterval);
+  stopwatch = false;
+  sub.disabled = stopwatch;
 });
 
 reset.addEventListener("click", function () {
@@ -53,4 +56,5 @@ reset.addEventListener("click", function () {
   hourswatch.textContent = hours;
   miliseconds.textContent = milisec;
   clearInterval(myInterval);
+  sub.disabled = false;
 });
